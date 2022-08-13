@@ -1,4 +1,7 @@
 using NthDigitOfPi.Controller;
+using NthDigitOfPi.Interface;
+using NthDigitOfPi.Model;
+using NthDigitOfPi.View;
 
 namespace NthDigitOfPi.Specs.StepDefinitions
 {
@@ -15,7 +18,12 @@ namespace NthDigitOfPi.Specs.StepDefinitions
         [Given("the PiDigits command has no parameters")]
         public void GivenThePiDigitsCommandHasNoParameters()
         {
-            _scenarioContext.Add("command", new PiDigit());
+            IParser parser = new CommandParser();
+            IModel model = new Calculator();
+            Mock<IView> view = new Mock<IView>();
+
+            _scenarioContext.Add("command", new PiDigit(parser, model, view.Object));
+            _scenarioContext.Add("view", view);
         }
     }
 }

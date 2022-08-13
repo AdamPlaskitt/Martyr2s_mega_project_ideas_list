@@ -1,4 +1,6 @@
-﻿using System;
+﻿using NthDigitOfPi.Interface;
+using NthDigitOfPi.Specs.Util;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,10 +19,15 @@ namespace NthDigitOfPi.Specs.StepDefinitions
         }
 
 
-        [When("the response is:")]
+        [Then("the response is:")]
         public void GivenThePiDigitsCommandHasNoParameters(string expectedResponse)
         {
-            throw new NotImplementedException();
+            Mock<IView> view = (Mock<IView>)_scenarioContext["view"];
+
+            var actualResponse = new ArgumentCaptor<string>();
+            view.Verify(x => x.Render(actualResponse.Capture()));
+
+            actualResponse.Value.Should().Be(expectedResponse);
         }
     }
 }

@@ -1,0 +1,11 @@
+﻿NAME
+	PiDigit
+
+	Calculates and outputs the Nth digit of PI.
+
+SYNOPSIS
+	PiDigit <N>
+	PiDigit [-h, --help]
+
+	<N>			Calculates Pi to the Nth digit
+	-h, --help	Display help information

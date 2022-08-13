@@ -1,5 +1,7 @@
 ﻿using NthDigitOfPi.Controller;
 using NthDigitOfPi.Interface;
+using NthDigitOfPi.Model;
+using NthDigitOfPi.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +14,9 @@ namespace NthDigitOfPi
     {
         public static void Main(string[] args)
         {
-            ICommand command = new PiDigit();
+            IParser commandParser = new CommandParser();
+            IView view = new CLI();
+            ICommand command = new PiDigit(commandParser, null, view);
         }
     }
 }
