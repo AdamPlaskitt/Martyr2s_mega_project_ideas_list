@@ -1,0 +1,51 @@
+using NthDigitOfPi.Controller;
+using NthDigitOfPi.Interface;
+using NthDigitOfPi.Model;
+using NthDigitOfPi.View;
+
+namespace NthDigitOfPi.Specs.StepDefinitions
+{
+    [Binding]
+    public sealed class GivenStepDefinitions
+    {
+        private readonly ScenarioContext _scenarioContext;
+
+        public GivenStepDefinitions(ScenarioContext scenarioContext)
+        {
+            _scenarioContext = scenarioContext;
+        }
+
+        [Given("the PiDigits command has no parameters")]
+        public void GivenThePiDigitsCommandHasNoParameters()
+        {
+            IParser parser = new CommandParser();
+            IModel model = new Calculator();
+            Mock<IView> view = new Mock<IView>();
+
+            _scenarioContext.Add("command", new PiDigit(parser, model, view.Object));
+            _scenarioContext.Add("view", view);
+        }
+
+        [Given("the PiDigit command with the argument (.*)")]
+        public void GivenThePiDigitsCommandWithArgument(string argument)
+        {
+            IParser parser = new CommandParser().Using(new string[] { argument });
+            IModel model = new Calculator();
+            var view = new Mock<IView>();
+
+            _scenarioContext.Add("command", new PiDigit(parser, model, view.Object));
+            _scenarioContext.Add("view", view);
+        }
+
+        [Given("the PiDigit command with the arguments '(.*)' '(.*)'")]
+        public void GivenThePiDigitsCommandWithArguments(string argument1, string argument2)
+        {
+            IParser parser = new CommandParser().Using(new string[] { argument1, argument2 });
+            IModel model = new Calculator();
+            var view = new Mock<IView>();
+
+            _scenarioContext.Add("command", new PiDigit(parser, model, view.Object));
+            _scenarioContext.Add("view", view);
+        }
+    }
+}
