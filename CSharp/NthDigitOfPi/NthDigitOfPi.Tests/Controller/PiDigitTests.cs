@@ -7,12 +7,12 @@ using NthDigitOfPi.Interface;
 
 namespace NthDigitOfPi.Tests.Controller
 {
-    public class PiDigit
+    public class PiDigitTests
     {
         [Fact]
         public void PiDigit_is_castable_to_Command()
         {
-            ICommand _ = new NthDigitOfPi.Controller.PiDigit();
+            Assert.True(typeof(ICommand).IsAssignableFrom(typeof(NthDigitOfPi.Controller.PiDigit)));
         }
     }
 }

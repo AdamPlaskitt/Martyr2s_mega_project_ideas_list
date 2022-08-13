@@ -6,7 +6,6 @@ namespace NthDigitOfPi.Controller
     {
         public void Execute()
         {
-            throw new NotImplementedException();
         }
     }
 }

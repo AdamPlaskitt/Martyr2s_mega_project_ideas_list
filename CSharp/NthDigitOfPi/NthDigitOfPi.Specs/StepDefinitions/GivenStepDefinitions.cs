@@ -13,7 +13,7 @@ namespace NthDigitOfPi.Specs.StepDefinitions
         }
 
         [Given("the PiDigits command has no parameters")]
-        public void GivenTheFirstNumberIs()
+        public void GivenThePiDigitsCommandHasNoParameters()
         {
             _scenarioContext.Add("command", new PiDigit());
         }
