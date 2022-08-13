@@ -9,5 +9,7 @@ namespace NthDigitOfPi.Model
     public enum CommandActions
     {
         Help,
+        Unknown,
+        Calculate,
     }
 }

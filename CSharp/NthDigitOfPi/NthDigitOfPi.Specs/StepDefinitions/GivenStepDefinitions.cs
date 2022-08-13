@@ -26,10 +26,21 @@ namespace NthDigitOfPi.Specs.StepDefinitions
             _scenarioContext.Add("view", view);
         }
 
-        [Given("the PiDigit command with (.*)")]
+        [Given("the PiDigit command with the argument (.*)")]
         public void GivenThePiDigitsCommandWithArgument(string argument)
         {
             IParser parser = new CommandParser().Using(new string[] { argument });
+            IModel model = new Calculator();
+            var view = new Mock<IView>();
+
+            _scenarioContext.Add("command", new PiDigit(parser, model, view.Object));
+            _scenarioContext.Add("view", view);
+        }
+
+        [Given("the PiDigit command with the arguments '(.*)' '(.*)'")]
+        public void GivenThePiDigitsCommandWithArguments(string argument1, string argument2)
+        {
+            IParser parser = new CommandParser().Using(new string[] { argument1, argument2 });
             IModel model = new Calculator();
             var view = new Mock<IView>();
 

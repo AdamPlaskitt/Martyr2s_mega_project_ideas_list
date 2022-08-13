@@ -8,6 +8,10 @@ namespace NthDigitOfPi.Interface
 {
     public interface IModel
     {
-        public string GetHelp();
+        public string GetHelpMessage();
+
+        public string GetUnknownCommandMessage();
+
+        public string Calculate(double n);
     }
 }

@@ -77,5 +77,52 @@ namespace NthDigitOfPi.Tests.Model
 
             actualAction.Should().Be(CommandActions.Help);
         }
+
+        [Theory]
+        [InlineData("unknown")]
+        [InlineData("random")]
+        public void Using_unknown_command_results_in_unknown_action(string arg)
+        {
+            IParser parser = new CommandParser();
+
+            string[] args = { arg };
+
+            var actualAction = parser.Using(args).ToAction();
+
+            actualAction.Should().Be(CommandActions.Unknown);
+        }
+
+        [Theory]
+        [InlineData("unknown", "test")]
+        [InlineData("random", "example")]
+        public void Using_unknown_2_part_command_results_in_unknown_action(string arg1, string arg2)
+        {
+            IParser parser = new CommandParser();
+
+            string[] args = { arg1, arg2 };
+
+            var actualAction = parser.Using(args).ToAction();
+
+            actualAction.Should().Be(CommandActions.Unknown);
+        }
+
+        [Theory]
+        [InlineData("-1")]
+        [InlineData("-42")]
+        [InlineData("0")]
+        [InlineData("1")]
+        [InlineData("42")]
+        [InlineData("0.42")]
+        [InlineData("42.42")]
+        public void Using_number_results_in_calculate_action(string arg)
+        {
+            IParser parser = new CommandParser();
+
+            string[] args = { arg };
+
+            var actualAction = parser.Using(args).ToAction();
+
+            actualAction.Should().Be(CommandActions.Calculate);
+        }
     }
 }

@@ -20,7 +20,19 @@ namespace NthDigitOfPi.Specs.StepDefinitions
 
 
         [Then("the response is:")]
-        public void GivenThePiDigitsCommandHasNoParameters(string expectedResponse)
+        public void ThenTheResponseIsBlock(string expectedResponse)
+        {
+            Mock<IView> view = (Mock<IView>)_scenarioContext["view"];
+
+            var actualResponse = new ArgumentCaptor<string>();
+            view.Verify(x => x.Render(actualResponse.Capture()));
+
+            actualResponse.Value.Should().Be(expectedResponse);
+        }
+
+
+        [Then("the response is (.*)")]
+        public void ThenTheResponseIs(string expectedResponse)
         {
             Mock<IView> view = (Mock<IView>)_scenarioContext["view"];
 

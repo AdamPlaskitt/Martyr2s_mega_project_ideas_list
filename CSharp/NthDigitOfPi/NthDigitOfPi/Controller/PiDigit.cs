@@ -36,7 +36,15 @@ namespace NthDigitOfPi.Controller
             switch (command.ToAction())
             {
                 case CommandActions.Help:
-                    view.Render(model.GetHelp());
+                    view.Render(model.GetHelpMessage());
+                    break;
+
+                case CommandActions.Calculate:
+                    view.Render(model.Calculate(command.Value));
+                    break;
+
+                case CommandActions.Unknown:
+                    view.Render(model.GetUnknownCommandMessage());
                     break;
             }
         }

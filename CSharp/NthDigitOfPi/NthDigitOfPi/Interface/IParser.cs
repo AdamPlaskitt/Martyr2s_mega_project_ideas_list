@@ -12,5 +12,7 @@ namespace NthDigitOfPi.Interface
         public IParser Using(IEnumerable<string>? args);
 
         public CommandActions ToAction();
+
+        public double Value { get; }
     }
 }
