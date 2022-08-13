@@ -53,5 +53,29 @@ namespace NthDigitOfPi.Tests.Model
 
             actualAction.Should().Be(CommandActions.Help);
         }
+
+        [Fact]
+        public void Using_h_results_in_help_action()
+        {
+            IParser parser = new CommandParser();
+
+            string[] args = { "-h" };
+
+            var actualAction = parser.Using(args).ToAction();
+
+            actualAction.Should().Be(CommandActions.Help);
+        }
+
+        [Fact]
+        public void Using_help_results_in_help_action()
+        {
+            IParser parser = new CommandParser();
+
+            string[] args = { "--help" };
+
+            var actualAction = parser.Using(args).ToAction();
+
+            actualAction.Should().Be(CommandActions.Help);
+        }
     }
 }

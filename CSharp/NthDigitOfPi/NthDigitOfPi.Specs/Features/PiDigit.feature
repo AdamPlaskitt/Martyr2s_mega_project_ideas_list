@@ -25,7 +25,7 @@ Rule: Displays help
 
 
 	Scenario Outline: 2. Help parameter
-		Given the command 'PiDigit <command>'
+		Given the PiDigit command with <argument>
 		When run
 		Then the response is:
 			"""
@@ -43,6 +43,6 @@ Rule: Displays help
 			"""
 
 		Examples: 
-		| command |
-		| -h      |
-		| --help  |
+		| argument |
+		| -h       |
+		| --help   |
