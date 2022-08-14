@@ -1,11 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿// <copyright file="Fibonacci.cs" company="Adam Plaskitt">
+// Copyright (c) Adam Plaskitt. All rights reserved.
+// </copyright>
 
 namespace Numbers
 {
+    /// <summary>
+    /// Represents actions around the Fibonacci sequence.
+    /// </summary>
     public class Fibonacci
     {
         /// <summary>
@@ -16,9 +17,13 @@ namespace Numbers
         public static int GetElementByIndex(int number)
         {
             if (number == 0)
+            {
                 return 0;
-            if (number == 1)
+            }
+            else if (number == 1)
+            {
                 return 1;
+            }
 
             int oldElement = 0;
             int newElement = 1;
