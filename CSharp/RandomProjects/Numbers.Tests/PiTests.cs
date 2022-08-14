@@ -1,4 +1,8 @@
-﻿using System;
+﻿// <copyright file="PiTests.cs" company="Adam Plaskitt">
+// Copyright (c) Adam Plaskitt. All rights reserved.
+// </copyright>
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
