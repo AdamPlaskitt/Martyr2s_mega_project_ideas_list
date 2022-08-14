@@ -4,6 +4,9 @@
 
 namespace Numbers.Tests;
 
+/// <summary>
+/// Tests for the <see cref="Fibonacci"/> class.
+/// </summary>
 public class FibonacciTests
 {
     [Theory]
