@@ -2,13 +2,9 @@
 // Copyright (c) Adam Plaskitt. All rights reserved.
 // </copyright>
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace Numbers.Tests;
+
+using System;
 
 /// <summary>
 /// Tests for the <see cref="Pi"/> class.
