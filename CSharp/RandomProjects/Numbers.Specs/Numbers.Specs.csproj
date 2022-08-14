@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Fibonacci Sequence\Fibonacci Sequence.csproj" />
+    <ProjectReference Include="..\Numbers\Numbers.csproj" />
   </ItemGroup>
 
 </Project>

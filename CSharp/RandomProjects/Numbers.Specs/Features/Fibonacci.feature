@@ -1,4 +1,4 @@
-﻿Feature: Calculator
+﻿Feature: Get Fibonacci element N
 
 	Calculates the Fibonacci sequence to the Nth item.
 

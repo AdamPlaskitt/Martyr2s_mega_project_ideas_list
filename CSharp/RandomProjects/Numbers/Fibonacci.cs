@@ -4,13 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Fibonacci_Sequence
+namespace Numbers
 {
-    public class Program
+    public class Fibonacci
     {
-        public static void Main() { }
-
-
+        /// <summary>
+        /// Calculates the Nth element in the Fibonacci sequence.
+        /// </summary>
+        /// <param name="number">The elemt to get.</param>
+        /// <returns>The Nth element of the Fibonacci sequence.</returns>
         public static int FibonacciElement(int number)
         {
             if (number == 0)
