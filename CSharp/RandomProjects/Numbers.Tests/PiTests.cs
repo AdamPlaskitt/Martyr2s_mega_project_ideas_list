@@ -10,8 +10,15 @@ using System.Threading.Tasks;
 
 namespace Numbers.Tests;
 
+/// <summary>
+/// Tests for the <see cref="Pi"/> class.
+/// </summary>
 public class PiTests
 {
+    /// <summary>
+    /// Getting a digit of PI with an invlaid index throws an error.
+    /// </summary>
+    /// <param name="number">The index to use.</param>
     [Theory]
     [InlineData(-1)]
     [InlineData(-42)]
@@ -23,10 +30,15 @@ public class PiTests
         action.Should().Throw<ArgumentOutOfRangeException>().WithMessage("Index must be greater than 0 (Parameter 'index')");
     }
 
+    /// <summary>
+    /// Getting a digit of PI with a valid index, returns corrent digit of PI.
+    /// </summary>
+    /// <param name="number">The index to test.</param>
+    /// <param name="answer">The correct digit to be returned.</param>
     [Theory]
     [InlineData(1, 1)]
     [InlineData(42, 9)]
-    public void Model_run_with_valid_returns_nth_digit(int number, int answer)
+    public void Valid_index_returns_nth_digit(int number, int answer)
     {
         int actualResult = Pi.GetDigitByIndex(number);
 
