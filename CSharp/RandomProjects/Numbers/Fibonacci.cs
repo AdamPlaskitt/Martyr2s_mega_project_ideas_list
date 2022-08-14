@@ -13,7 +13,7 @@ namespace Numbers
         /// </summary>
         /// <param name="number">The elemt to get.</param>
         /// <returns>The Nth element of the Fibonacci sequence.</returns>
-        public static int FibonacciElement(int number)
+        public static int GetElementByIndex(int number)
         {
             if (number == 0)
                 return 0;

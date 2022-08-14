@@ -9,11 +9,5 @@ namespace Numbers.Specs.StepDefinitions
         {
             _scenarioContext = scenarioContext;
         }
-
-        [When("run")]
-        public void WhenRun()
-        {
-            _scenarioContext.Add("output", Fibonacci.FibonacciElement((int)_scenarioContext["number"]));
-        }
     }
 }

@@ -9,11 +9,5 @@ namespace Numbers.Specs.StepDefinitions
         {
             _scenarioContext = scenarioContext;
         }
-
-        [Given("the target (.*)")]
-        public void GivenTheTarget(int number)
-        {
-            _scenarioContext.Add("number", number);
-        }
     }
 }
