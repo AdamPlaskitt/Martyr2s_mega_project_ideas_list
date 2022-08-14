@@ -9,6 +9,11 @@ namespace Numbers.Tests;
 /// </summary>
 public class FibonacciTests
 {
+    /// <summary>
+    /// With a valid number the right element of the sequence is returned.
+    /// </summary>
+    /// <param name="number">The element index to teset.</param>
+    /// <param name="answer">The actual element.</param>
     [Theory]
     [InlineData(0, 0)]
     [InlineData(1, 1)]
@@ -16,7 +21,7 @@ public class FibonacciTests
     [InlineData(3, 2)]
     [InlineData(5, 5)]
     [InlineData(11, 89)]
-    public void Model_run_with_valid_returns_nth_digit(int number, int answer)
+    public void Valid_index_returns_nth_element(int number, int answer)
     {
         int actualResult = Fibonacci.GetElementByIndex(number);
 
